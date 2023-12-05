@@ -1,3 +1,7 @@
 {
-    "nuxt.isNuxtApp": true
+    "nuxt.isNuxtApp": true,
+    "prettier.printWidth": 400,
+    "editor.codeActionsOnSave": {
+
+    }
 }

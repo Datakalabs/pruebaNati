@@ -3,7 +3,7 @@ import colors from 'vuetify/es5/util/colors'
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        titleTemplate: '%s - prueba',
+        titleTemplate: 'Prueba Data-ka front',
         title: 'prueba',
         htmlAttrs: {
             lang: 'en',
