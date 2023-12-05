@@ -26,9 +26,7 @@ export const actions = {
                 commit('updateLoadingBodies', false)
                 commit('updateBodies', res.data.bodytypes)
             })
-            .catch((err) => {
-                // eslint-disable-next-line no-console
-                console.log(err)
+            .catch(() => {
                 commit('updateLoadingBodies', false)
             })
     },
