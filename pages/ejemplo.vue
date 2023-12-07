@@ -125,6 +125,7 @@ export default {
             loadingAvatar: (state) => state.ejemplo.loading_avatar,
             avatar: (state) => state.ejemplo.generated_avatar,
             errorAvatar: (state) => state.ejemplo.error_avatar,
+            searchresults: (state) => state.ejemplo.searchResults,
         }),
     },
     beforeMount() {
@@ -148,6 +149,10 @@ export default {
         generateAvatar() {
             window.scrollTo({ top: 0, behavior: 'smooth' })
             this.$store.dispatch('ejemplo/A_CREATE_AVATAR', this.body.id)
+        },
+        getsearch() {
+            this.$store.dispatch('ejemplo/A_GET_SEARCH', { type: item.type }) 
+
         },
         reset() {
             this.$store.commit('ejemplo/updateTypes', null)

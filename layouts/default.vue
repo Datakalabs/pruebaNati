@@ -37,6 +37,24 @@
                 "
                 >Prueba 2</v-btn
             >
+            <v-btn
+                text
+                @click="
+                    $router.currentRoute.path !== '/searchBar'
+                        ? $router.push('/searchBar')
+                        : ''
+                "
+                >Busqueda</v-btn
+            >
+            <v-btn
+                text
+                @click="
+                    $router.currentRoute.path !== '/cards'
+                        ? $router.push('/cards')
+                        : ''
+                "
+                >Card 1</v-btn
+            >
         </v-app-bar>
         <v-main>
             <v-container style="max-width: 100%">
