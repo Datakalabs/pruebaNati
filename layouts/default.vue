@@ -31,6 +31,15 @@
             <v-btn
                 text
                 @click="
+                    $router.currentRoute.path !== '/spotify'
+                        ? $router.push('/spotify')
+                        : ''
+                "
+                >spotify</v-btn
+            >
+            <v-btn
+                text
+                @click="
                     $router.currentRoute.path !== '/pruebados'
                         ? $router.push('/pruebados')
                         : ''
