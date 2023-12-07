@@ -1,3 +1,4 @@
+import axios from "axios";
 export const strict = false
 
 export const state = () => ({
@@ -10,9 +11,37 @@ export const state = () => ({
     assets: null,
     generated_avatar: null,
     error_avatar: false,
+    searchResults: []
 })
 
+
 export const actions = {
+
+    async A_GET_SEARCH({ commit }, q) {
+        const options = {
+            method: 'GET',
+            url: 'https://spotify-web2.p.rapidapi.com/search/',
+            params: {
+                q,
+                type: 'multi',
+                offset: '0',
+                limit: '10',
+                numberOfTopResults: '5'
+            },
+            headers: {
+                'X-RapidAPI-Key': '49559df9f7msh3e82f95f8a1b3a5p1b28bdjsnf626007151b0',
+                'X-RapidAPI-Host': 'spotify-web2.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await axios.request(options);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
     A_GET_BODIES({ commit }) {
         commit('updateLoadingBodies', true)
         this.$axios
@@ -121,4 +150,10 @@ export const mutations = {
     updateErrorAvatar(state, data) {
         state.error_avatar = data
     },
+
+    setSearchResults(state, results) {
+        state.searchResults = results;
+      },
+
+    
 }
