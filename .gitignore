@@ -94,3 +94,7 @@ package-lock.json
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# amplify
+.amplify
+amplifyconfiguration*
